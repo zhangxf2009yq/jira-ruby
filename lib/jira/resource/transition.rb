@@ -27,6 +27,14 @@ module JIRA
           issue.transitions.build(transition)
         end
       end
+      def url
+        the_url = issue.attrs['self'].sub(@client.options[:site],'/') + '/transitions'
+	puts the_url
+	the_url
+      end
+      def new_record?
+        true
+      end
     end
 
   end
